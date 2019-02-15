@@ -68,6 +68,7 @@
 
     // instance of the Collection
     app.todoList = new app.TodoList();
+    console.log(app.TodoList)
 
     //--------------
     // Views
@@ -103,10 +104,12 @@
         this.input.val(''); // clean input box
       },
       addOne: function(todo){
+        console.log ("addOne")
         var view = new app.TodoView({model: todo});
         $('#todo-list').append(view.render().el);
       },
       addAll: function(){
+        console.log ("addAll")
         this.$('#todo-list').html(''); // clean the todo list
         app.todoList.each(this.addOne, this);
       },
